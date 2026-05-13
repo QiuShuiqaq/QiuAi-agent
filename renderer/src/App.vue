@@ -86,12 +86,12 @@ const modelPricingCatalog = [
 ]
 
 const rechargePricingCatalog = [
-  { price: '30¥', credits: '100000积分', bonus: '' },
-  { price: '60¥', credits: '250000积分', bonus: '送25%' },
-  { price: '150¥', credits: '750000积分', bonus: '送50%' },
-  { price: '300¥', credits: '1600000积分', bonus: '送60%' },
-  { price: '1500¥', credits: '9000000积分', bonus: '送80%' },
-  { price: '3000¥', credits: '20000000积分', bonus: '送100%' }
+  { price: '30¥', credits: '100000积分', validity: '一周', bonus: '' },
+  { price: '60¥', credits: '250000积分', validity: '一月', bonus: '送25%' },
+  { price: '150¥', credits: '750000积分', validity: '一季', bonus: '送50%' },
+  { price: '300¥', credits: '1600000积分', validity: '半年', bonus: '送60%' },
+  { price: '1500¥', credits: '9000000积分', validity: '一年', bonus: '送80%' },
+  { price: '3000¥', credits: '20000000积分', validity: '三年', bonus: '送100%' }
 ]
 
 const batchOptions = [
@@ -653,10 +653,6 @@ const menuLabelMap = computed(() => {
 
 const currentMenuLabel = computed(() => {
   return menuLabelMap.value[activeMenu.value] || '工作台'
-})
-
-const currentAgentProfile = computed(() => {
-  return agentProfiles.value.find((item) => item.id === activeAgentProfileId.value) || null
 })
 
 const currentAgentConversationSession = computed(() => {
